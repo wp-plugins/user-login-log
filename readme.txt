@@ -34,7 +34,8 @@ This section describes how to install the plugin and get it working.
 5. final view your log.
 
 == Screenshots ==
-
+1. Logon Log Admin Area
+2. Screen Setting
 
 == Changelog ==
 
