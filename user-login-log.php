@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.0
+  Version: 1..1
   Author URI: http://weblizar.com
  */
 
@@ -268,7 +268,7 @@ if( !class_exists( 'UserLoginLog' ) )
                         PRIMARY KEY ( id ) ,
                         INDEX ( uid, ip, login_result )
                     );";
-				  $wpdb->query("ALTER TABLE {$this->table} ADD COLUMN user_email varchar( 100 ) NOT NULL AFTER user_role, ADD INDEX (user_email);");
+				  $wpdb->query("ALTER TABLE {$this->table} ADD COLUMN name varchar( 100 ) NOT NULL AFTER user_role");
 				  //$wpdb->query("ALTER TABLE {$this->table} ADD COLUMN country varchar( 100 ) NOT NULL AFTER ip, ADD INDEX (country);");
 				    
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -377,7 +377,9 @@ if( !class_exists( 'UserLoginLog' ) )
 		$guest_country = $visitor_location['CountryName'];
 		$guest_city  = $visitor_location['CityName'];
 		$guest_state = $visitor_location['RegionName'];
-
+			$user_info = get_userdata($uid);
+               $USErname =  $user_info->first_name .  " " . $user_info->last_name;
+            
 
         $values = array(
             'uid'           => $uid,
@@ -390,9 +392,10 @@ if( !class_exists( 'UserLoginLog' ) )
 			'city'			=> $guest_city,
             'login_result'  => $this->login_success,
             'data'          => $serialized_data,
+			'name'			=> $USErname
             );
 
-        $format = array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+        $format = array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s','%s');
 
         $this->save_data($values, $format);
     }
@@ -518,7 +521,7 @@ if( !class_exists( 'UserLoginLog' ) )
             echo '<input type="hidden" name="page" value="login_log" />';
             echo '<input type="hidden" name="download-login-stats" value="true" />';
             echo '<p class="submit">';
-            echo '<input type="submit" name="submit" id="submit" class="button-primary" value="Export stats to CSV">';
+            echo '<input type="submit" name="submit" id="submit" class="button-primary" value="Export Log to CSV">';
             echo '&nbsp;&nbsp;<a  class="button" id="delete-all" href="' . wp_nonce_url('users.php?page=login_log&action=delete', 'delete_ull') . '" onclick="return confirm(\'IMPORTANT: All User stats records will be deleted.\')">Delete All</a>';
             echo '</p>';
             echo '</form>';
