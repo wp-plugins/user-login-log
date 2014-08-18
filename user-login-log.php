@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1..1
+  Version: 1.1
   Author URI: http://weblizar.com
  */
 
