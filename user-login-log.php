@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.1
+  Version: 1.2
   Author URI: http://weblizar.com
  */
 
@@ -258,6 +258,7 @@ if( !class_exists( 'UserLoginLog' ) )
                         uid INT( 11 ) NOT NULL ,
                         user_login VARCHAR( 60 ) NOT NULL ,
                         user_role VARCHAR( 30 ) NOT NULL ,
+						name VARCHAR( 100 ) NOT NULL ,
 						user_email VARCHAR( 30 ) NOT NULL ,
                         time DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL ,
                         ip VARCHAR( 100 ) NOT NULL ,
@@ -268,8 +269,6 @@ if( !class_exists( 'UserLoginLog' ) )
                         PRIMARY KEY ( id ) ,
                         INDEX ( uid, ip, login_result )
                     );";
-				  $wpdb->query("ALTER TABLE {$this->table} ADD COLUMN name varchar( 100 ) NOT NULL AFTER user_role");
-				  //$wpdb->query("ALTER TABLE {$this->table} ADD COLUMN country varchar( 100 ) NOT NULL AFTER ip, ADD INDEX (country);");
 				    
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
                 dbDelta($sql);
