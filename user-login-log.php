@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.2
+  Version: 1.3
   Author URI: http://weblizar.com
  */
 
@@ -473,7 +473,50 @@ if( !class_exists( 'UserLoginLog' ) )
         $stats_table = $this->stats_table;
 
         $stats_table->prepare_items();
+?>  <style>
+			.fag-rate-us span.dashicons{
+				width: 30px;
+				height: 30px;
+				line-height: 1.6 !important;
+			}
+			.fag-rate-us span.dashicons-star-filled:before {
+				content: "\f155";
+				font-size: 30px;
+				
+			}
+		
+		   .upgrade-to-pro-demo .dashicons, .upgrade-to-pro-demo .dashicons-before:before {
 
+			line-height: 1.6;
+
+			}
+			
+		   .upgrade-to-pro-demo .button-primary {
+				background: #F8504B;
+				border-color: #C4322E;
+				-webkit-box-shadow: inset 0 1px 0 rgba(248,80,75,.5),0 1px 0 rgba(0,0,0,.15);
+				box-shadow: inset 0 1px 0 rgba(248,80,75,.5),0 1px 0 rgba(0,0,0,.15);
+			}
+			.upgrade-to-pro-demo .button-primary:hover {
+				background: rgba(248,80,75,.91);
+				border-color: #C4322E;
+				-webkit-box-shadow: inset 0 1px 0 rgba(248,80,75,.5),0 1px 0 rgba(0,0,0,.15);
+				box-shadow: inset 0 1px 0 rgba(248,80,75,.5),0 1px 0 rgba(0,0,0,.15);
+			}
+		</style>
+		<div align="right" style="margin-right:15px;">
+			<p style="margin-right:10px;margin: 0em 0;">If you like our plugin then please show us some love</p> 
+			<p style="margin-right:10px;margin: 0em 0;">Rate Us On WordPress</p>
+			
+		</div>
+		<div  class="upgrade-to-pro-demo" style="text-align:center;margin-bottom:10px;margin-top:10px;">
+			<a style="float:right;margin-right:15px;" href="http://wordpress.org/plugins/user-login-log/" target="_blank" class="button button-primary button-hero">RATE US <span class="dashicons dashicons-star-filled"></span>
+				<span class="dashicons dashicons-star-filled"></span>
+				<span class="dashicons dashicons-star-filled"></span>
+				<span class="dashicons dashicons-star-filled"></span>
+				<span class="dashicons dashicons-star-filled"></span></a>
+			
+		</div> <?php 
         echo '<div class="wrap srp">';
             echo '<h2>' . __('login Log', 'ull') . '</h2>';
 
