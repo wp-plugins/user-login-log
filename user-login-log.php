@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.3
+  Version: 1.4
   Author URI: http://weblizar.com
  */
 
@@ -364,18 +364,15 @@ if( !class_exists( 'UserLoginLog' ) )
         }
 		$current_user = wp_get_current_user();
 		$user_email = $user->user_email;
-		require_once("location-helper/ip.codehelper.io.php");
-		require_once("location-helper/php_fast_cache.php");
-
-		$_ip = new ip_codehelper();
+	
 
 		$real_client_ip_address = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? esc_attr($_SERVER['HTTP_X_FORWARDED_FOR']) : esc_attr($_SERVER['REMOTE_ADDR']);
-		$visitor_location       = $_ip->getLocation($real_client_ip_address);
+		
 
 		$guest_ip   = $visitor_location['IP'];
-		$guest_country = $visitor_location['CountryName'];
-		$guest_city  = $visitor_location['CityName'];
-		$guest_state = $visitor_location['RegionName'];
+		$guest_country = "";
+		$guest_city  = "";
+		$guest_state = "";
 			$user_info = get_userdata($uid);
                $USErname =  $user_info->first_name .  " " . $user_info->last_name;
             
@@ -753,8 +750,7 @@ class ull_List_Table extends WP_List_Table
             case 'uid':
             case 'time':
 			
-			case 'country':
-			return $item[$column_name];
+			
 			case 'data':
 			return $item[$column_name];
 			case 'image':
@@ -763,8 +759,7 @@ class ull_List_Table extends WP_List_Table
 				return get_avatar( $user_email, 60 );
 			case 'user_email':
 			return $item[$column_name];
-			case 'city':
-			return $item[$column_name];
+			
             case 'ip':
                 return $item[$column_name];
 			
@@ -806,10 +801,8 @@ class ull_List_Table extends WP_List_Table
             'user_role'     => __('User Role', 'ull'),
 			'user_email'	=> __('User Email','ull'),
             'name'          => __('Name', 'ull'),
-            'time'          => __('Time', 'ull'),
             'ip'            => __('IP Address', 'ull'),
-			'country'		=> __('Country','ull'),
-			'city'			=> __('City','ull'),
+            'time'          => __('Time', 'ull'),
             'login_result'  => __('login Result', 'ull'),
 			'data'			=> __('Data','ull')
            
