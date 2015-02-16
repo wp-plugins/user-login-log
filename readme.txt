@@ -39,7 +39,7 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 1.6 Vesrion 17/12/2014 =
+= 1.6 Vesrion 16/02/2015 =
 
 * Plugin installation error on WordPress multisite network is resolved 
 
