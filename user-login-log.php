@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.5
+  Version: 1.6
   Author URI: http://weblizar.com
  */
 
@@ -30,7 +30,7 @@ if( !class_exists( 'UserLoginLog' ) )
         if ( is_multisite() )
         {
             // get main site's table prefix
-            $main_prefix = $wpdb->get_bstats_prefix(1);
+            $main_prefix = $wpdb->get_blog_prefix(1);
             $this->table = $main_prefix . $this->table;
         }
         else
