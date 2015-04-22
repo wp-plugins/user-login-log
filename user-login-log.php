@@ -4,7 +4,7 @@
   Plugin URI: http://weblizar.com
   Description: This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
   Author: weblizar
-  Version: 1.7
+  Version: 1.8
   Author URI: http://weblizar.com
  */
 
@@ -877,7 +877,7 @@ class ull_List_Table extends WP_List_Table
     function prepare_items()
     {
         global $wpdb, $ull;
-
+		$ull = new UserLoginLog();	
         //get number of successful and failed logins so we can display them in parentheces for each view
 
         //building a WHERE SQL query for each view

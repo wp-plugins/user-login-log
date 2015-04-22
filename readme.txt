@@ -4,7 +4,7 @@ Donate link: http://www.weblizar.com/
 Tags: login, log, users, wordpress user, admin, user login, admin login, wordpress login, wp login, ip, country, city, date , time, browser info, subscriber, author, editor, role, wordpress profile, profile, about author, author login, form, database, user database, wordpress database, login database, login db, db, user db, gravatar, user gravatar, user stats,  statistics, stats, admin stats, wordpress stats, subscribe, register,  authors, csv, export, lists, members, Membership, reports, search, permission, role, security,, multisite, profiles, user management, usermeta, photo, picture, plugin, login information, login info, email, user email, wp avatar, wp user avatar,     
 Requires at least: 3.0 
 Tested up to: 4.2
-Stable tag: 1.7
+Stable tag: 1.8
 
 This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
 
@@ -38,6 +38,11 @@ This section describes how to install the plugin and get it working.
 2. Screen Setting
 
 == Changelog ==
+
+= 1.8 Version 22/04/2015 =
+
+* Now Compatible with WP-Obfuscator plug-in
+
 
 = 1.7 Version 22/04/2015 =
 
