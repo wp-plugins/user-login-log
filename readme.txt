@@ -3,8 +3,8 @@ Contributors: weblizar
 Donate link: http://www.weblizar.com/
 Tags: login, log, users, wordpress user, admin, user login, admin login, wordpress login, wp login, ip, country, city, date , time, browser info, subscriber, author, editor, role, wordpress profile, profile, about author, author login, form, database, user database, wordpress database, login database, login db, db, user db, gravatar, user gravatar, user stats,  statistics, stats, admin stats, wordpress stats, subscribe, register,  authors, csv, export, lists, members, Membership, reports, search, permission, role, security,, multisite, profiles, user management, usermeta, photo, picture, plugin, login information, login info, email, user email, wp avatar, wp user avatar,     
 Requires at least: 3.0 
-Tested up to: 4.1
-Stable tag: 1.6
+Tested up to: 4.2
+Stable tag: 1.7
 
 This plugin track records of wordpress user login with set of multiple information like ip, date , time, country , city, user name etc.
 
@@ -39,32 +39,36 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 1.6 Vesrion 16/02/2015 =
+= 1.7 Version 22/04/2015 =
+
+* Compatible with WordPress 4.2 version
+
+= 1.6 Version 16/02/2015 =
 
 * Plugin installation error on WordPress multisite network is resolved 
 
-= 1.5 Vesrion 17/12/2014 =
+= 1.5 Version 17/12/2014 =
 
 * Compatible with WordPress 4.1 version
  
 
-= 1.4 Vesrion 28/10/2014 =
+= 1.4 Version 28/10/2014 =
 
 * Remove third party dependencies for location as per user requirement 
 * Remove country and city columns from tables for remove third party dependencies
 * Update code
 * Update design
 
-= 1.3 Vesrion 13/09/2014 =
+= 1.3 Version 13/09/2014 =
 
 * Resolve small error
 
-= 1.2 Vesrion 05/09/2014 =
+= 1.2 Version 05/09/2014 =
 
 * Remove db table install problem
 * Compatible with WordPress 4.0.
 
-= 1.1 Vesrion 18/08/2014 =
+= 1.1 Version 18/08/2014 =
 
 * Add name of user in export file.
 * Resolve some small text error.
